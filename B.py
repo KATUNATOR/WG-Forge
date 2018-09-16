@@ -11,7 +11,7 @@ x = 3
 y = 7
 tb = 2
 tp = 3
-z = 1
+z = 7
 db = 1
 
 if y > x:
@@ -19,15 +19,17 @@ if y > x:
 else:
 	dp = -1
 
-if dp:
-	resp = (y - x) * tp
+if dp:	
+	rb = y
 	if db:
-		if z < x:
-			resb = (y - z) * tb
-		else:
-			resb = (2 * s + y - z) * tb
+		rb -= z
+		if z > x:
+			rb += 2 * s
 	else:
-		resb = (z + y) * tb
+		rb += z
+	rb *= tb
+	rp = (y - z) * tp
 
-print(resp)
-print(resb)
+print(rp)
+print(rb)
+
