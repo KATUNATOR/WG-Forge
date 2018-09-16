@@ -1,18 +1,10 @@
-# s = int(input())
-# x = int(input())
-# y = int(input())
-# tb = int(input())
-# tp = int(input())
-# z = int(input())
-# db = int(input()) 
-
-s = 10
-x = 7
-y = 3
-tb = 2
-tp = 3
-z = 7
-db = -1
+s = int(input())
+x = int(input())
+y = int(input())
+tb = int(input())
+tp = int(input())
+z = int(input())
+db = int(input()) 
 
 if y > x:
 	dp = 1
