@@ -1,10 +1,6 @@
-s = int(input())
-x = int(input())
-y = int(input())
-tb = int(input())
-tp = int(input())
-z = int(input())
-db = int(input()) 
+s, x, y= (int(n) for n in raw_input().split())
+tb, tp = (int(n) for n in raw_input().split())
+z, db = (int(n) for n in raw_input().split())
 
 if y > x:
 	dp = 1
