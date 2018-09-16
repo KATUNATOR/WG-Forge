@@ -7,29 +7,40 @@
 # db = int(input()) 
 
 s = 10
-x = 3
-y = 7
+x = 7
+y = 3
 tb = 2
 tp = 3
 z = 7
-db = 1
+db = -1
 
 if y > x:
 	dp = 1
 else:
 	dp = -1
 
-if dp:	
+if dp > 0:	
 	rb = y
-	if db:
+	if db > 0:
 		rb -= z
 		if z > x:
 			rb += 2 * s
 	else:
 		rb += z
 	rb *= tb
-	rp = (y - z) * tp
+	rp = (y - x) * tp
+else:
+	rb = s - y
+	if db < 0:
+		rb -= s - z
+		if z < x:
+			rb += 2 * s
+	else:
+		rb += s - z
+	rb *= tb
+	rp = (x - y) * tp
 
-print(rp)
-print(rb)
-
+if rp < rb:
+	print(rp)
+else:
+	print(rb)
