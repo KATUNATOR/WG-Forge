@@ -5,11 +5,10 @@ meals.sort()
 nd = int(raw_input())
 days = []
 for i in range(nd):
-    days.append([2 * int(raw_input()), i, 0])
-days.sort()
+    days.append([2 * int(raw_input()), 0])
 
 count = 0
-for d in days:
+for d in sorted(days):
     if days.index(d) != 0 and d[0] != days[days.index(d) - 1][0]:
         for m in meals[:]:
             if d[0] >= m:
@@ -17,8 +16,8 @@ for d in days:
                 meals.remove(m)
             else:
                 break
-    d[2] = count
+    d[1] = count
 
-for i in sorted(days, key = lambda day: day[1]):
-    print(i[2])
+for i in days:
+    print(i[1])
     
