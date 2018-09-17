@@ -14,12 +14,13 @@ print(days)
 count = 0
 
 for d in days:
-    for m in meals[:]:
-        if d[0] >= m:
-            count += 1
-            meals.remove(m)
-        else:
-            break
+    if days.index(d) != 0 and d[0] != days[days.index(d) - 1][0]:
+        for m in meals[:]:
+            if d[0] >= m:
+                count += 1
+                meals.remove(m)
+            else:
+                break
     d[2] = count
 
 for i in sorted(days, key = lambda day: day[1]):
