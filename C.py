@@ -1,12 +1,12 @@
-from collections import deque
-
 n = int(raw_input())
 
-old = deque()
-names = deque()
+old = []
+names = []
 
 for i in range(n):
-    names.appendleft(raw_input())
+    names.append(raw_input())
+
+names.reverse()   
 
 for i in names:
     if i not in old:
