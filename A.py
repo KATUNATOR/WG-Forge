@@ -8,11 +8,7 @@ for i in range(nd):
     days.append([2 * int(raw_input()), i, 0])
 days.sort()
 
-print(meals)
-print(days)
-
 count = 0
-
 for d in days:
     if days.index(d) != 0 and d[0] != days[days.index(d) - 1][0]:
         for m in meals[:]:
