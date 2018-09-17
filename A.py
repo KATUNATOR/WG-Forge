@@ -1,13 +1,27 @@
 nm = int(raw_input())
-m = map(int,raw_input().split())
-m.sort()
+meals = map(int,raw_input().split())
+meals.sort()
 
 nd = int(raw_input())
-d = []
+days = []
 for i in range(nd):
-    d.append([int(raw_input()), i])
+    days.append([2 * int(raw_input()), i, 0])
+days.sort()
 
-d.sort()
+print(meals)
+print(days)
 
-print(m)
-print(d)
+count = 0
+
+for d in days:
+    for m in meals[:]:
+        if d[0] >= m:
+            count += 1
+            meals.remove(m)
+        else:
+            break
+    d[2] = count
+
+for i in sorted(days, key = lambda day: day[1]):
+    print(i[2])
+    
