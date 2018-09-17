@@ -4,11 +4,9 @@ old = []
 names = []
 
 for i in range(n):
-    names.append(raw_input())
-
-names.reverse()   
+    names.insert(0, raw_input())
 
 for i in names:
-    if i not in old:
+    if not (i in old):
         print(i)
         old.append(i)
