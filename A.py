@@ -9,14 +9,16 @@ for i in range(nd):
 
 count = 0
 for d in sorted(days):
-    if days.index(d) != 0 and d[0] != days[days.index(d) - 1][0]:
+    if days.index(d) != 0 and d[0] == days[days.index(d) - 1][0]:
+        d[1] = count
+    else:
         for m in meals[:]:
             if d[0] >= m:
                 count += 1
                 meals.remove(m)
             else:
                 break
-    d[1] = count
+        d[1] = count
 
 for i in days:
     print(i[1])
