@@ -1,11 +1,6 @@
 nm = int(raw_input())
-meals = map(int,raw_input().split())
-meals.sort()
-
-nd = int(raw_input())
-days = []
-for i in range(nd):
-    days.append([2 * int(raw_input()), 0])
+meals = sorted(int(n) for n in raw_input().split())
+days = [[2 * int(raw_input()), 0] for i in xrange(int(raw_input()))]
 
 count = 0
 prew = [-1,-1]
@@ -22,4 +17,3 @@ for d in sorted(days):
 
 for i in days:
     print(i[1])
-    
