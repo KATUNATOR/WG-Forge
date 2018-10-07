@@ -1,12 +1,9 @@
-n = int(raw_input())
+names = {}
 
-names = []
+for i in xrange(input()):
+    name = raw_input().strip()   
+    if name.isalpha() and name.islower():
+        names[name] = i
 
-for i in range(n):
-    name = raw_input()
-    if name in names:
-        names.remove(name)
-    names.insert(0, name)
-
-for i in names:
+for i in sorted(names.keys(), key = names.__getitem__, reverse = True):
     print(i)
